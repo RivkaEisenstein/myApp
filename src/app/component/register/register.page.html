@@ -1,0 +1,156 @@
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Register</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen>
+    <ion-card>
+      <!-- <img id="img" src='../../../assets//images/240_F_204256859_J6dhyG3GwnHkxZ5l1UgrGtlNIDgMcQBl.jpg'> -->
+      <img id="img" src="../../../assets/images/240_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+      <!-- <img id="imgPeople"  src="../../../assets/images/240_F_118095891_SBtBoP1W2zf548uIKbLnXNvcnAzZCreV.jpg"> -->
+      <ion-item class="ion-activated">
+        <ion-icon  name="person" slot="start"></ion-icon>
+        <ion-label>Name User</ion-label>
+        <ion-text color="danger">*</ion-text>
+        <ion-input  #input name="userName" id="name" [(ngModel)]=currentUser.UserName type="text"></ion-input>
+      </ion-item>
+      <ion-item class="ion-activated">
+        <ion-icon  name="create" slot="start"></ion-icon>
+        <ion-label>Tz</ion-label>
+        <ion-text color="danger">*</ion-text>
+        <ion-input #input name="password" [(ngModel)]="currentUser.Tz" type="password"></ion-input>
+      </ion-item>
+      <ion-item class="ion-activated">
+        <ion-icon  name="call" slot="start"></ion-icon>
+        <ion-label>Phone</ion-label>
+        <ion-text color="danger">*</ion-text>
+        <ion-input #input name="phone" type="number" [(ngModel)]="currentUser.Phone" type="number"></ion-input>
+      </ion-item>
+      <ion-item class="ion-activated">
+        <ion-icon  name="calendar" slot="start"></ion-icon>
+        <ion-label>City</ion-label>
+        <ion-text color="danger">*</ion-text>
+        <ion-input  type="text"></ion-input>
+      </ion-item>
+      <ion-item class="ion-activated">
+        <ion-icon  name="share" slot="start"></ion-icon>
+        <ion-label>Age</ion-label>
+        <ion-text color="danger">*</ion-text>
+        <ion-input #input name="age" type="number" #age="ngModel" id="age" [(ngModel)]="currentUser.Age"></ion-input>
+      </ion-item> 
+      <ion-item class="ion-activated">
+        <ion-icon  name="people" slot="start"></ion-icon>
+        <ion-label>Number cards</ion-label>
+        <ion-text color="danger">*</ion-text>
+        <ion-input #input [min]=1 type="number" name="NumberChildren" [(ngModel)]="currentUser.NumberChildren" 
+        (input)="updateListChildren($event.target.value)"></ion-input>
+      </ion-item> 
+      <div *ngIf="currentUser.NumberChildren>1">
+        <div *ngFor="let user of currentUser.Children;let i=index">
+          <ion-item class="ion-activated">
+            <ion-icon  name="people" slot="start"></ion-icon>
+            <ion-label>Name child</ion-label>
+            <ion-text color="danger">*</ion-text>
+            <ion-input #input required name="childName{{index}}" [(ngModel)]="user.UserName" type="text"></ion-input>
+          </ion-item> 
+          <ion-item class="ion-activated">
+            <ion-icon  name="people" slot="start"></ion-icon>
+            <ion-label>Age child</ion-label>
+            <ion-text color="danger">*</ion-text>
+            <ion-input #input required type="number" name="currentUserchildAge{{index}}" [(ngModel)]="user.Age"></ion-input>
+          </ion-item> 
+        </div>
+      </div>
+    </ion-card>
+    <ion-card color="primary" id="card">
+      <ion-item class="ion-activated">
+        <ion-icon  name="folder-open" slot="start"></ion-icon>
+        <ion-label>Bank name</ion-label>
+        <ion-text color="danger">*</ion-text>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item class="ion-activated">
+        <ion-icon  name="pricetag" slot="start"></ion-icon>
+        <ion-label>Number account</ion-label>
+        <ion-text color="danger">*</ion-text>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      <ion-item class="ion-activated">
+        <ion-icon  name="body" slot="start"></ion-icon>
+        <ion-label>Name account</ion-label>
+        <ion-text color="danger">*</ion-text>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+    </ion-card>
+    <!-- <form (ngSubmit)="logForm()">
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+        <ion-item>
+          <ion-label position="floating">User name<ion-text color="danger">*</ion-text>
+          </ion-label> -->
+          <!-- formControlName="UserName" -->
+          <!-- <ion-input name="userName" id="name" [(ngModel)]=currentUser.UserName #input></ion-input> -->
+          <!-- <ion-input type="text" [value]="inputValue" #input></ion-input> -->
+        <!-- </ion-item> -->
+        <!-- <div  class="a" class="error" *ngIf="todo.get('UserName').hasError('pattern') ">
+        
+          UserName must be letters
+        </div> -->
+        <!-- <ion-item>
+          <ion-label position="floating">password<ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input #input name="password" [(ngModel)]="currentUser.Tz"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Pohne<ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input #input name="phone" type="number" [(ngModel)]="currentUser.Phone"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Age<ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input #input name="age" type="number" #age="ngModel" id="age" [(ngModel)]="currentUser.Age"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Number cards<ion-text color="danger">*</ion-text>
+          </ion-label>
+
+          <ion-input #input [min]=1 name="NumberChildren" [(ngModel)]="currentUser.NumberChildren" type="number"
+            (input)="updateListChildren($event.target.value)"></ion-input>
+        </ion-item>
+
+        <div *ngIf="currentUser.NumberChildren>1">
+
+          <div *ngFor="let user of currentUser.Children;let i=index">
+
+            <!-- todo -->
+            <!-- <ion-item>
+              <ion-label position="floating">Child name<ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input #input required name="childName{{index}}" [(ngModel)]="user.UserName"></ion-input> -->
+            <!-- </ion-item>
+            <ion-item>
+              <ion-label position="floating">Age<ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input #input required type="number" name="currentUserchildAge{{index}}" [(ngModel)]="user.Age">
+              </ion-input>
+            </ion-item>
+          </div>
+        </div>
+
+      </ion-list>  -->
+
+      <div class="ion-padding">
+        <ion-button expand="block" fill="outline" class="ion-no-margin"(click)="register()">Register</ion-button>
+        <br>
+        <!-- <ion-button expand="block" type="submit" class="ion-no-margin" (click)="register()">Register</ion-button> -->
+
+      </div>
+
+    <!-- </form> -->
+  </ion-content>
+
+</ion-app>

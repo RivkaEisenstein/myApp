@@ -1,0 +1,95 @@
+<ion-app>
+
+  <ion-content fullscreen class="ion-padding">
+    <ion-button expand="block">Show Alert</ion-button>
+  </ion-content>
+
+  <ion-content fullscreen>
+
+    <div class="ion-page" id="main-content">
+
+      <ion-list>
+        <ion-segment value="all">
+          <ion-segment-button (click)="changAge(10)" value="all">
+            <ion-label>Children</ion-label>
+          </ion-segment-button>
+
+          <ion-segment-button (click)="changAge(10)" value="favorites">
+            <ion-label>Men</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+        <ion-item *ngFor="let ride of rides ; let i=index" (click)="navigate(ride.RideId)">
+
+          <ion-avatar slot="start">
+            <img src={{ride.Image}}>
+          </ion-avatar>
+          <ion-avatar slot="end">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ride.RideName}}</h2>
+            <p>The first ride: {{ ride.Avg}} </p>
+          </ion-label>
+        </ion-item>
+
+        <div *ngFor="let ride of rides ; let i=index">
+          <ion-item *ngIf="age> ride.Age">
+            <ion-thumbnail slot="start">
+              <img solt="start" src={{ride.Image}} />
+            </ion-thumbnail>
+            <ion-label>
+              <h2>{{ride.RideName}}</h2>
+              <p>Iron & Wine, 2017
+
+              </p>
+            </ion-label>
+          </ion-item>
+        </div>
+
+      </ion-list>
+
+    </div>
+
+
+
+    <ion-list>
+
+      <ion-list-header> Registration for park reides: </ion-list-header>
+
+      <ion-item *ngFor="let ride of rides ; let i=index">
+        <ion-avatar slot="start">
+          <img src={{ride.Image}} />
+        </ion-avatar>
+
+        <ion-label>
+          <h2>{{ride.RideName}} </h2>
+          <h3>Age: {{ride.AgeUser}}</h3>
+          <h3>The first ride: {{ ride.Avg}}</h3>
+          <p>Listen, I've had a pretty messed up day...</p>
+          <ion-item>
+            <ion-checkbox slot="end" color="danger" (click)="addToList(ride)"></ion-checkbox>
+            <ion-label color="primary">Add to list</ion-label>
+          </ion-item>
+
+          <ion-button color="light" (click)="presentAlertRegister(ride)">
+            <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+          </ion-button>
+          <ion-button color="light" (click)="a()">
+            <ion-icon name="close-outline"></ion-icon>
+          </ion-button>
+          <ion-button fill="solid" color="danger" (click)="navigate(ride.RideId)">Add to list</ion-button>
+          <!-- <ion-icon name="chatbubble-outline"></ion-icon> -->
+          <div *ngIf="degel">
+            <h3 *ngFor="let child of Children">
+
+            </h3>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+  <ion-button expand="block" (click)="registerListRides()">Register for my list</ion-button>
+
+
+</ion-app>

@@ -1,0 +1,184 @@
+
+
+
+
+
+
+  
+
+<!-- <ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <h2>Rides for: {{currentUser.UserName}}</h2>
+  <div *ngFor="let userRide of userRides">
+    <ion-card *ngIf="userRide.UserId===currentUser.UserId">
+      <ion-img src={{userRide.Image}}></ion-img>
+      <ion-card-content>
+        <ion-card-header>
+          <ion-card-subtitle>{{userRide.RideName}}</ion-card-subtitle>  
+            <ion-card-title>Time: {{userRide.CurrentTime}}</ion-card-title>
+          </ion-card-header>
+        <p>Here’s a small text description for the card component.
+          Nothing more, nothing less.
+        </p>
+        <ion-item>
+          <ion-button fill="solid" (click)="presentAlertDelete(userRide)">Delete register</ion-button>
+          <ion-button (click)="alert(userRide)"><ion-icon slot="end" name="heart" > </ion-icon></ion-button>
+          <ion-icon slot="end" name="share" > </ion-icon>
+
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngFor="let child of currentUser.Children">
+    <h2>Rides for: {{child.UserName}}</h2>
+    <div *ngFor="let userRide of userRides">
+      <ion-card *ngIf="userRide.UserId===child.UserId">
+        <ion-img src={{userRide.Image}}></ion-img>
+        <ion-card-content>
+          <ion-card-header>
+            <ion-card-subtitle>{{userRide.RideName}}</ion-card-subtitle>
+            <ion-card-title>Time: {{userRide.CurrentTime}}</ion-card-title>
+          </ion-card-header>
+          <p>Here’s a small text description for the card component.
+            Nothing more, nothing less.
+          </p>
+          <ion-item>
+            <ion-button fill="solid" (click)="presentAlertDelete(userRide)">Delete register</ion-button>
+            <ion-button (click)="alert(userRide)"><ion-icon slot="end" name="heart"> </ion-icon></ion-button> 
+            <ion-icon slot="end" name="share" > </ion-icon>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content> -->
+<!-- <ion-app> 
+
+  <ion-content fullscreen>
+
+    <ion-list>
+
+      <ion-list-header> My Rides: </ion-list-header>
+      <h2>Rides for: {{currentUser.UserName}}</h2>
+      <div *ngFor="let userRide of userRides">
+        <ion-item *ngIf="userRide.UserId===currentUser.UserId">
+          <ion-avatar slot="start">
+            <img src={{userRide.Image}} />
+          </ion-avatar>
+          <ion-label>
+            <h2>{{userRide.RideName}} </h2>
+            <h3>Number invited seets: {{userRide.NumberSeets}}</h3>
+            <h3>Avg to wait: </h3>
+            <p>Listen, I've had a pretty messed up day...</p>
+            <ion-button color="light" (click)="presentAlertDelete(userRide.userRideId)">
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+            <ion-button color="danger" (click)="getAvg(userRide.userRideId)">
+              <ion-icon name="chatbubble-outline"></ion-icon>
+            </ion-button>
+          </ion-label>
+        </ion-item>
+      </div>
+
+      <div *ngFor="let child of currentUser.Children">
+        <h2>Rides for: {{child.UserName}}</h2>
+        <div *ngFor="let userRide of userRides">
+          <ion-item *ngIf="userRide.UserId===child.UserId">
+            <ion-avatar slot="start">
+              <img src={{userRide.Image}} />
+            </ion-avatar>
+            <ion-label>
+              <h2>{{userRide.RideName}} </h2>
+              <h3>Number invited seets: {{userRide.NumberSeets}}</h3>
+              <h3>Avg to wait: </h3>
+              <p>Listen, I've had a pretty messed up day...</p>
+              <ion-button color="light" (click)="presentAlertDelete(userRide.userRideId)">
+                <ion-icon name="close-outline"></ion-icon>
+              </ion-button>
+              <ion-button color="danger" (click)="getAvg(userRide.userRideId)">
+                <ion-icon name="chatbubble-outline"></ion-icon>
+              </ion-button>
+            </ion-label>
+          </ion-item>
+        </div>
+      </div>
+
+    </ion-list>
+  </ion-content>
+
+</ion-app>  -->
+
+
+<br><br><br>
+<ion-content fullscreen>
+  <ion-list>
+    <ion-list-header>
+      <b class="nameUser">{{currentUser.UserName}}</b>
+    </ion-list-header>
+    <div *ngFor="let userRide of userRides">
+      <ion-item *ngIf="userRide.UserId===currentUser.UserId">
+        <ion-avatar slot="start">
+          <img src={{userRide.Image}}>
+        </ion-avatar>
+        <div id="id">
+        <ion-label>
+          <h2>{{userRide.RideName}}</h2>
+          <h3>Time start: {{userRide.CurrentTime}}</h3>
+          <p>Listen, I've had a pretty messed up day...</p>
+        </ion-label>  
+        <ion-button color="light" (click)="presentAlertDelete(userRide)">delete</ion-button>
+        <ion-button color="light" (click)="navigateRides()"> <ion-icon name="add-outline"></ion-icon></ion-button>
+        <ion-button color="light"><ion-icon name="chatbubble-outline"></ion-icon></ion-button> 
+        <ion-button color="danger"> <ion-icon name="heart-outline"> </ion-icon></ion-button>
+
+        <!-- <ion-chip color="primary">
+          <ion-icon name="checkmark-circle"></ion-icon>
+          <ion-label>Icon</ion-label>
+        </ion-chip> -->
+        <!-- <ion-chip outline color="secondary">
+          <ion-label>Delete</ion-label>
+          <ion-icon name="close-circle"></ion-icon>
+        </ion-chip> -->
+      
+      </div>
+
+      </ion-item>
+        <br>
+    </div>
+
+    <div *ngFor="let child of currentUser.Children">
+      <ion-list-header>
+       <b class="nameUser">{{child.UserName}}</b> 
+      </ion-list-header>
+      <div *ngFor="let userRide of userRides">
+        <ion-item  *ngIf="userRide.UserId===child.UserId">
+          <ion-avatar slot="start">
+            <img src={{userRide.Image}}>
+          </ion-avatar>
+          <div>
+          <ion-label>
+            <h2>{{userRide.RideName}}</h2>
+            <h3>I'm a big deal</h3>
+            <p>Listen, I've had a pretty messed up day...</p>
+          </ion-label>
+
+          <ion-button color="light" (click)="presentAlertDelete(userRide)">delete</ion-button>
+          <ion-button color="light" (click)="navigateRides()"> <ion-icon name="add-outline"></ion-icon></ion-button>
+          <ion-button color="light"><ion-icon name="chatbubble-outline"></ion-icon></ion-button> 
+          <ion-button color="danger"> <ion-icon name="heart-outline"> </ion-icon></ion-button>
+  
+          </div>
+        </ion-item>
+      </div>
+
+    </div>
+
+  </ion-list>
+
+
+</ion-content>

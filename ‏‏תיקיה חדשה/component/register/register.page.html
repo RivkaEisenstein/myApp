@@ -1,0 +1,81 @@
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Register</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen>
+    <!-- [formGroup]="todo" -->
+    <form  (ngSubmit)="logForm()">
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+
+        <ion-item >
+          <ion-label position="floating">User name<ion-text color="danger">*</ion-text>
+          </ion-label>
+          <!-- formControlName="UserName" -->
+          <ion-input   name="userName" id="name"  [(ngModel)]=currentUser.UserName #input></ion-input>
+         <!-- <ion-input type="text" [value]="inputValue" #input></ion-input> -->
+        </ion-item>
+        <!-- <div  class="a" class="error" *ngIf="todo.get('UserName').hasError('pattern') ">
+        
+          UserName must be letters
+        </div> -->
+
+        <ion-item>
+          <ion-label position="floating">password<ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input #input  name="password"   [(ngModel)]="currentUser.Tz" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Pohne<ion-text color="danger">*</ion-text>
+          </ion-label>
+         
+          <ion-input #input  name="phone" type="number" [(ngModel)]="currentUser.Phone" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+
+          <ion-label position="floating">Age<ion-text color="danger">*</ion-text>
+          </ion-label>
+         
+          <ion-input #input  name="age" type="number" #age="ngModel" id="age" [(ngModel)]="currentUser.Age" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Number cards<ion-text color="danger">*</ion-text>
+          </ion-label>
+          
+          <ion-input #input [min]=1 name="NumberChildren" [(ngModel)]="currentUser.NumberChildren"   type="number" (input)="updateListChildren($event.target.value)" ></ion-input>
+        </ion-item>
+
+        <div *ngIf="currentUser.NumberChildren>1">
+
+          <div *ngFor="let user of currentUser.Children;let i=index">
+          
+            <!-- todo -->
+            <ion-item>
+              <ion-label position="floating">Child name<ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input #input required name="childName{{index}}" [(ngModel)]="user.UserName" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Age<ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input #input required type="number" name="currentUserchildAge{{index}}" [(ngModel)]="user.Age" ></ion-input>
+            </ion-item>
+          </div>
+        </div>
+
+      </ion-list>
+
+      <div class="ion-padding">
+        <ion-button expand="block" type="submit" class="ion-no-margin" (click)="register()">Register</ion-button>
+      </div>
+
+    </form>
+  </ion-content>
+  <!-- <ion-alert-controller></ion-alert-controller> -->
+
+</ion-app>

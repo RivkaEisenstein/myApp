@@ -1,0 +1,187 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+  <ion-list lines="full" class="ion-no-margin ion-no-padding">
+
+    <ion-item>
+      <img src="../../../assets//images/roller-coaster_114775-13.jpg">
+    </ion-item>
+
+    <ion-item>
+      <h3 #ref></h3>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">User name<ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input name="userName" id="name" [(ngModel)]="currentUser.userName"></ion-input>
+    </ion-item>
+    
+  </ion-list>
+
+  <div class="ion-padding">
+    <ion-button expand="block" type="submit" class="ion-no-margin" (click)="showDetails()">Show Details</ion-button>
+  </div>
+
+  <div>
+    <ion-button expand="block" color="danger" type="submit" class="ion-no-margin" (click)="a()">Chang user name</ion-button>
+  </div>
+
+  <div>
+    <ion-button expand="block" color="danger" type="submit" class="ion-no-margin" (click)="logOut()">log Out</ion-button>
+  </div>
+
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <input type="button" >
+
+
+
+<ion-input name="userName" (click)="sent()"></ion-input>
+ -->
+<!-- <ion-router-outlet></ion-router-outlet> -->
+<!-- 
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar translucent>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      
+   
+
+   
+
+
+     
+      <ion-item>
+        <ion-icon name="archive" slot="start"></ion-icon>
+        <ion-label>My Rides
+          <button (click)="sent()"> <ion-icon name="chevron-forward-outline"></ion-icon></button>
+        </ion-label>
+      </ion-item>
+     
+      <ion-item>
+        <ion-icon name="star-half-outline" slot="start"></ion-icon>
+        <ion-label>Rides
+          <button (click)="routeMyRide()"> <ion-icon name="chevron-forward-outline"></ion-icon></button>
+        </ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-icon name="globe-outline" slot="start"></ion-icon>
+        <ion-label>Map
+          <button> <ion-icon name="chevron-forward-outline"></ion-icon></button>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+</ion-menu> -->
+
+
+<!-- <div class="ion-page" id="main-content"> -->
+<!-- <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Asument Park</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  -->
+
+
+
+
+
+
+<!-- <ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{techs[0].title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen class="ion-padding">
+  <ion-icon name="{{techs[0].icon}"  size="large"></ion-icon>
+  
+</ion-content> -->
+
+
+
+
+
+<!-- <ion-app> -->
+
+<!-- <ion-nav id="nav-home"></ion-nav> -->
+<!-- <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Nav</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>tux</ion-title>
+  </ion-toolbar>
+  <ion-content fullscreen>
+    <ion-list>
+
+      <ion-item button (click)="showDetail(tech.title)" *ngFor="let tech of techs">
+
+        <ion-icon id="ionIcon" slot="start" name="logo-{{tech.icon}}" [style.color]="tech.color" #pRef> </ion-icon>
+        <ion-label>
+          <h3>{{tech.title}}</h3>
+        </ion-label> -->
+<!-- </ion-item>
+
+    </ion-list>
+  </ion-content>
+
+  <span fullscreen *ngIf="bool">
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-buttons slot="start" (click)="change()">
+          <ion-back-button defaultHref="/my-ride" ></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{title}}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      
+      <ion-icon name="logo-{{icon}}" [style.color]="color" size="large"></ion-icon>
+      <p>sdszfd{{description}}</p>
+    </ion-content>
+  </span>
+</ion-app> --> -->

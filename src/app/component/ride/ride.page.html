@@ -1,0 +1,33 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="navigation()">
+      <ion-back-button defaultHref="/rides"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Back</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngFor="let ride of rides">
+  <ion-card *ngIf="ride.RideId===rideId">
+    <ion-img src={{ride.Image}}></ion-img>
+
+    <ion-card-content>
+      <ion-card-header>
+        <ion-card-subtitle>{{ride.KindAge}}</ion-card-subtitle>  
+          <ion-card-title>{{ride.RideName}}</ion-card-title>
+        </ion-card-header>
+        <ion-item>
+          <ion-icon name="alarm-outline" slot="start"></ion-icon>
+          <ion-label color="primary"> Time:</ion-label> <ion-label>{{ride.Avg}}</ion-label>
+        </ion-item>
+      <h4 color="primary">New in park! You can invite qeuee in rides in the list rides button and we arrenge them in optimizal option. 
+      </h4>
+      <ion-item>
+        <ion-button (click)="presentActionSheet(ride)" fill="solid">My list rides</ion-button>
+        <ion-icon (click)="presentAlertRegister(ride)"  slot="end" name="add-circle-outline"></ion-icon>
+        <ion-icon slot="end" name="heart" ></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</div>
+</ion-content>

@@ -1,0 +1,89 @@
+<!-- <ion-router-outlet></ion-router-outlet> -->
+
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar translucent>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+
+      <ion-item>
+        <ion-icon name="paper-plane" slot="start"></ion-icon>
+        <ion-label>
+          All Rides
+          <button (click)="routeRides()">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="paper-plane" slot="start"></ion-icon>
+        <ion-label>Login
+          <button (click)="routeLogin()">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="heart" slot="start"></ion-icon>
+        <ion-label>Register
+          <button (click)="routeRegister()">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="archive" slot="start"></ion-icon>
+        <ion-label>My Rides
+          <button (click)="routeMyRides()">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="star-half-outline" slot="start"></ion-icon>
+        <ion-label>Feedbek
+          <button (click)="routeMyRide()">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="globe-outline" slot="start"></ion-icon>
+        <ion-label>Map
+          <button>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="globe-outline" slot="start"></ion-icon>
+        <ion-label>Map
+          <button>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- <div class="ion-page" id="main-content"> -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Amusement Park</ion-title>
+  </ion-toolbar>
+</ion-header>

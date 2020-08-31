@@ -1,0 +1,17 @@
+#root {
+    --ion-safe-area-top: 20px;
+    --ion-safe-area-bottom: 22px;
+  }
+
+  .can-go-back>ion-header ion-back-button {
+    display: block;
+}
+.hydrated {
+    visibility: inherit;
+}
+// ion-menu-button {
+//     display: none !important;
+// }
+// .bar-button-menutoggle {
+//     display: none !important;
+//   } 

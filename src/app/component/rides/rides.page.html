@@ -1,0 +1,76 @@
+<ion-app>
+  <ion-content fullscreen>
+    <div id="main-content">
+      <ion-list>
+
+        <div *ngFor="let ride of rides ; let i=index" (click)="navigate(ride.RideId)">
+          <ion-item *ngIf="ride.KindAge===kindAge">
+            <ion-avatar slot="start">
+              <img src={{ride.Image}}>
+            </ion-avatar>
+            <ion-avatar slot="end">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </ion-avatar>
+            <ion-label>
+              <h2>{{ride.RideName}} {{ride.RideId}}</h2>
+              <p>The first ride: {{ ride.Avg}} </p>
+            </ion-label>
+          </ion-item>
+        </div>
+
+      </ion-list>
+    </div>
+
+    <ion-list>
+      <ion-list-header> Registration for park reides: </ion-list-header>
+      <ion-item *ngFor="let ride of rides ; let i=index">
+        <ion-avatar slot="start">
+          <img src={{ride.Image}} />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ride.RideName}} </h2>
+          <h3>Age: {{ride.AgeUser}}</h3>
+          <h3>The first ride: {{ ride.Avg}}</h3>
+          <p>Listen, I've had a pretty messed up day...</p>
+          <ion-item>
+            <ion-checkbox slot="end" color="danger" (click)="addToList(ride)"></ion-checkbox>
+            <ion-label color="primary">Add to list</ion-label>
+          </ion-item>
+          <ion-button color="light" (click)="presentAlertRegister(ride)">
+            <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+          </ion-button>
+          <ion-button color="light" (click)="a()">
+            <ion-icon name="close-outline"></ion-icon>
+          </ion-button>
+          <ion-button fill="solid" color="danger" (click)="navigate(ride.RideId)">Add to list</ion-button>
+          <ion-icon name="chatbubble-outline"></ion-icon>
+          <div *ngIf="degel"> -->
+  <h3 *ngFor="let child of Children"> 
+            </h3>
+          </div> 
+         </ion-label>
+      </ion-item> 
+     </ion-list> 
+
+  </ion-content>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button (click)="changAge(1)" tab="music">
+      <ion-label>Children</ion-label>
+      <ion-icon name="people"></ion-icon>
+      <ion-badge>12</ion-badge>
+    </ion-tab-button>
+    <ion-tab-button (click)="changAge(2)" tab="movies">
+      <ion-label>Adults</ion-label>
+      <ion-icon name="person"></ion-icon>
+      <ion-badge >15</ion-badge>
+    </ion-tab-button>
+    <ion-tab-button (click)="changAge(3)" tab="games">
+      <ion-label>Experss
+      </ion-label>
+      <ion-icon name="person-add"></ion-icon>
+      <ion-badge>10</ion-badge>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+
+</ion-app>
