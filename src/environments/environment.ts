@@ -8,7 +8,18 @@ export const environment = {
   api:"http://localhost:56160",
   url:"http://localhost:56160",
 
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyCfBxKJ2NcMDLmcfm1CWLZT1co2oPsQd8w",
+    authDomain: "notification-sample-60997.firebaseapp.com",
+    databaseURL: "https://notification-sample-60997.firebaseio.com",
+    projectId: "notification-sample-60997",
+    storageBucket: "notification-sample-60997.appspot.com",
+    messagingSenderId: "352845393273",
+    appId: "1:352845393273:web:c975be7d3c8e853297d3a8",
+    measurementId: "G-67FMRMR52G"
+  }
+
 };
 
 /*
